@@ -16,6 +16,14 @@ The second issue I ran into, was that it did not seem to be possible to download
 
 What I really was looking for was to do predictions on a collection of stock tickers and to use that for trading on e.g. *etrade*. For this I modified the code to work with the **Yahoo yfinance** API. This API will be installed in using the shell script `conda_requirements.sh`.
 
+### Running the Code
+1. Change into the directory `./trading_momentum_transformer/`.
+2. (Optional) Update the ticker list in `settings/default.py` -> STOCK_TICKERS.
+3. Download the ticker data from *yfianace*, providing the desired time range, e.g. `python -m data.download_yfinance_data --start_date 2015-01-01 --end_date 2025-01-29`.
+4. Create the Momentum Transformer features with `python -m examples.create_features_yfinance`.
+5. Run the changepoint detection module with e.g. `python -m examples.concurent_cpd_yfinance 21`.
+6. 
+
 
 ## About
 This code accompanies the paper [Trading with the Momentum Transformer: An Intelligent and Interpretable Architecture](https://arxiv.org/pdf/2112.08534.pdf) and additionally provides an implementation for the paper [Slow Momentum with Fast Reversion: A Trading Strategy Using Deep Learning and Changepoint Detection](https://arxiv.org/pdf/2105.13727.pdf). 
