@@ -68,7 +68,6 @@ conda install -c conda-forge -c defaults \
     python-dateutil \
     pytz \
     pyzmq \
-    Quandl \
     regex \
     requests \
     requests-oauthlib \
